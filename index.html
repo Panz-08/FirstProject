@@ -1,1 +1,189 @@
-<a>Hello World!!!</a>
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FocusFlow — Pomodoro timer &amp; task list</title>
+    <meta
+      name="description"
+      content="A calm, local-first Pomodoro timer with a built-in task list. No accounts, no tracking, no dependencies."
+    />
+    <meta name="theme-color" content="#080b14" />
+    <meta property="og:title" content="FocusFlow — Pomodoro timer & task list" />
+    <meta
+      property="og:description"
+      content="Focus in 25-minute blocks. A calm, local-first Pomodoro timer with a built-in task list."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="brand-gradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#a78bfa" />
+                <stop offset="100%" stop-color="#22d3ee" />
+              </linearGradient>
+            </defs>
+            <circle cx="24" cy="24" r="18" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="5" />
+            <circle
+              cx="24"
+              cy="24"
+              r="18"
+              fill="none"
+              stroke="url(#brand-gradient)"
+              stroke-width="5"
+              stroke-linecap="round"
+              stroke-dasharray="113"
+              stroke-dashoffset="34"
+              transform="rotate(-90 24 24)"
+            />
+          </svg>
+          <div class="brand-copy">
+            <span class="brand-name">FocusFlow</span>
+            <span class="brand-tag">focus, one block at a time</span>
+          </div>
+        </div>
+
+        <button
+          id="theme-toggle"
+          class="icon-btn"
+          type="button"
+          aria-label="Switch to light theme"
+          aria-pressed="false"
+        >
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path
+              d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7Z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7" />
+            <path
+              d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </header>
+
+      <main id="main" class="grid">
+        <section class="card timer-card" aria-labelledby="timer-heading">
+          <h1 id="timer-heading" class="sr-only">Pomodoro timer</h1>
+
+          <div class="tabs" role="tablist" aria-label="Timer mode">
+            <button class="tab is-active" type="button" role="tab" data-mode="focus" aria-selected="true">
+              Focus
+            </button>
+            <button class="tab" type="button" role="tab" data-mode="short" aria-selected="false" tabindex="-1">
+              Short break
+            </button>
+            <button class="tab" type="button" role="tab" data-mode="long" aria-selected="false" tabindex="-1">
+              Long break
+            </button>
+          </div>
+
+          <div class="timer" id="timer">
+            <svg class="ring" viewBox="0 0 280 280" aria-hidden="true" focusable="false">
+              <defs>
+                <linearGradient id="ring-gradient" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#a78bfa" />
+                  <stop offset="55%" stop-color="#8b5cf6" />
+                  <stop offset="100%" stop-color="#22d3ee" />
+                </linearGradient>
+              </defs>
+              <circle class="ring-track" cx="140" cy="140" r="120" />
+              <circle class="ring-progress" id="ring-progress" cx="140" cy="140" r="120" />
+            </svg>
+
+            <div class="timer-face">
+              <p class="time" id="time-display" role="timer" aria-live="off">25:00</p>
+              <p class="caption" id="mode-caption">Focus session</p>
+            </div>
+          </div>
+
+          <div class="dots" id="session-dots" aria-hidden="true"></div>
+
+          <div class="controls">
+            <button id="toggle-btn" class="btn btn-primary" type="button">Start</button>
+            <button id="reset-btn" class="btn btn-ghost" type="button" aria-label="Reset timer">Reset</button>
+            <button id="skip-btn" class="btn btn-ghost" type="button" aria-label="Skip to next session">
+              Skip
+            </button>
+          </div>
+
+          <p class="hint">
+            <kbd>Space</kbd> start / pause <span aria-hidden="true">·</span> <kbd>R</kbd> reset
+            <span aria-hidden="true">·</span> <kbd>S</kbd> skip
+          </p>
+        </section>
+
+        <div class="side">
+          <section class="card tasks-card" aria-labelledby="tasks-heading">
+            <div class="card-head">
+              <h2 id="tasks-heading">Today's tasks</h2>
+              <span class="pill" id="task-count">0 open</span>
+            </div>
+
+            <form id="task-form" class="task-form" autocomplete="off">
+              <label class="sr-only" for="task-input">New task</label>
+              <input
+                id="task-input"
+                name="task"
+                type="text"
+                maxlength="120"
+                placeholder="What are you focusing on?"
+                required
+              />
+              <button class="btn btn-primary btn-add" type="submit" aria-label="Add task">+</button>
+            </form>
+
+            <ul class="task-list" id="task-list"></ul>
+            <p class="empty" id="task-empty">Nothing here yet — add your first task above.</p>
+
+            <div class="tasks-foot">
+              <button id="clear-done" class="link-btn" type="button">Clear completed</button>
+            </div>
+          </section>
+
+          <section class="card stats-card" aria-label="Today's stats">
+            <div class="stat">
+              <span class="stat-value" id="stat-sessions">0</span>
+              <span class="stat-label">sessions</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value" id="stat-minutes">0m</span>
+              <span class="stat-label">focused</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value" id="stat-open">0</span>
+              <span class="stat-label">to do</span>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>
+          Built with vanilla JavaScript, no trackers, no accounts.
+          <a href="https://github.com/Panz-08/FirstProject">View source</a>
+        </p>
+      </footer>
+    </div>
+
+    <p id="sr-status" class="sr-only" aria-live="polite"></p>
+    <script type="module" src="assets/js/main.js"></script>
+  </body>
+</html>
