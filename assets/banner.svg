@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 420" role="img" aria-label="FocusFlow — a calm Pomodoro timer with a built-in task list">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#080b14" />
+      <stop offset="0.55" stop-color="#0c1220" />
+      <stop offset="1" stop-color="#111a2e" />
+    </linearGradient>
+    <radialGradient id="glow-violet" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.55" />
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glow-cyan" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.4" />
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a78bfa" />
+      <stop offset="0.55" stop-color="#8b5cf6" />
+      <stop offset="1" stop-color="#22d3ee" />
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a78bfa" />
+      <stop offset="1" stop-color="#22d3ee" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="420" fill="url(#bg)" />
+  <circle cx="150" cy="20" r="420" fill="url(#glow-violet)" />
+  <circle cx="1140" cy="400" r="380" fill="url(#glow-cyan)" />
+
+  <g font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+    <text x="76" y="186" font-size="78" font-weight="700" letter-spacing="-2.5" fill="#f8fafc">
+      FocusFlow
+    </text>
+    <rect x="78" y="212" width="132" height="6" rx="3" fill="url(#bar)" />
+    <text x="78" y="266" font-size="25" fill="#a8b6d4">
+      A calm Pomodoro timer with a built-in task list.
+    </text>
+    <text x="78" y="318" font-size="17" letter-spacing="0.4" fill="#7484a6">
+      vanilla JavaScript · zero dependencies · local-first
+    </text>
+  </g>
+
+  <g transform="translate(1010 210)">
+    <circle r="132" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" />
+    <circle r="120" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="12" />
+    <circle
+      r="120"
+      fill="none"
+      stroke="url(#ring)"
+      stroke-width="12"
+      stroke-linecap="round"
+      stroke-dasharray="753.98"
+      stroke-dashoffset="188"
+      transform="rotate(-90)"
+    />
+    <text
+      y="14"
+      text-anchor="middle"
+      font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+      font-size="46"
+      font-weight="600"
+      letter-spacing="-1.5"
+      fill="#e9eefb"
+    >
+      25:00
+    </text>
+    <text
+      y="48"
+      text-anchor="middle"
+      font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+      font-size="13"
+      letter-spacing="5"
+      fill="#8b98b4"
+    >
+      FOCUS
+    </text>
+  </g>
+</svg>
