@@ -123,8 +123,7 @@ function renderTimer() {
   for (const tab of el.tabs) {
     const active = tab.dataset.mode === mode;
     tab.classList.toggle('is-active', active);
-    tab.setAttribute('aria-selected', String(active));
-    tab.tabIndex = active ? 0 : -1;
+    tab.setAttribute('aria-pressed', String(active));
   }
 
   document.title = running ? `${formatClock(remainingMs)} · ${MODE_LABELS[mode]}` : BASE_TITLE;
@@ -460,6 +459,8 @@ document.addEventListener('keydown', (event) => {
   const target = event.target;
   if (target instanceof HTMLElement) {
     if (target.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName)) return;
+    // Let the browser handle Space on a focused button or link.
+    if (event.key === ' ' && target.closest('button, a')) return;
   }
 
   switch (event.key.toLowerCase()) {

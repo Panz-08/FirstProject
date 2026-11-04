@@ -83,16 +83,12 @@
         <section class="card timer-card" aria-labelledby="timer-heading">
           <h1 id="timer-heading" class="sr-only">Pomodoro timer</h1>
 
-          <div class="tabs" role="tablist" aria-label="Timer mode">
-            <button class="tab is-active" type="button" role="tab" data-mode="focus" aria-selected="true">
+          <div class="tabs" role="group" aria-label="Timer mode">
+            <button class="tab is-active" type="button" data-mode="focus" aria-pressed="true">
               Focus
             </button>
-            <button class="tab" type="button" role="tab" data-mode="short" aria-selected="false" tabindex="-1">
-              Short break
-            </button>
-            <button class="tab" type="button" role="tab" data-mode="long" aria-selected="false" tabindex="-1">
-              Long break
-            </button>
+            <button class="tab" type="button" data-mode="short" aria-pressed="false">Short break</button>
+            <button class="tab" type="button" data-mode="long" aria-pressed="false">Long break</button>
           </div>
 
           <div class="timer" id="timer">
