@@ -29,6 +29,12 @@ It is also a small, readable reference for how far you can get with plain
 HTML, CSS, and modern JavaScript when the state machine is kept separate from
 the DOM.
 
+## Preview
+
+![FocusFlow running a focus session with a task list](assets/screenshot.png)
+
+The same interface in [light theme](assets/screenshot-light.png).
+
 ## Features
 
 - **Pomodoro cycle that keeps count** — 25 / 5 / 15 minute blocks, with a long
