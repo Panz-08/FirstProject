@@ -1,0 +1,28 @@
+{
+  "name": "focusflow",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A calm Pomodoro timer with a built-in task list. Vanilla JavaScript, zero dependencies.",
+  "keywords": [
+    "pomodoro",
+    "productivity",
+    "timer",
+    "task-list",
+    "vanilla-js",
+    "local-first"
+  ],
+  "homepage": "https://panz-08.github.io/FirstProject/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Panz-08/FirstProject.git"
+  },
+  "scripts": {
+    "test": "node --test tests/",
+    "start": "python3 -m http.server 4173"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
