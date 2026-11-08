@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.svg" alt="FocusFlow — a calm Pomodoro timer with a built-in task list" width="100%" />
+<img src="assets/banner.svg" alt="FocusFlow - a calm Pomodoro timer with a built-in task list" width="100%" />
 
 # FocusFlow
 
@@ -23,7 +23,7 @@
 Most timers want an account, a subscription, or a network connection before
 they will count down from 25:00. FocusFlow is one static page with no build
 step, no framework, and no tracking. Everything you type stays in your
-browser's `localStorage` — there is no backend to send it to.
+browser's `localStorage` - there is no backend to send it to.
 
 It is also a small, readable reference for how far you can get with plain
 HTML, CSS, and modern JavaScript when the state machine is kept separate from
@@ -37,21 +37,21 @@ The same interface in [light theme](assets/screenshot-light.png).
 
 ## Features
 
-- **Pomodoro cycle that keeps count** — 25 / 5 / 15 minute blocks, with a long
+- **Pomodoro cycle that keeps count** - 25 / 5 / 15 minute blocks, with a long
   break automatically offered after every fourth completed focus session.
-- **Built-in task list** — add, complete, reopen, delete, and clear tasks.
+- **Built-in task list** - add, complete, reopen, delete, and clear tasks.
   Tasks survive reloads.
-- **Today's stats** — sessions completed and total focused time, reset at
+- **Today's stats** - sessions completed and total focused time, reset at
   local midnight.
-- **Wall-clock accurate** — the countdown is anchored to `Date.now()`, so it
+- **Wall-clock accurate** - the countdown is anchored to `Date.now()`, so it
   stays correct even when the tab is throttled or the screen sleeps.
-- **Dark and light themes** — remembers your choice, otherwise follows
+- **Dark and light themes** - remembers your choice, otherwise follows
   `prefers-color-scheme`.
-- **Keyboard first** — `Space` to start or pause, `R` reset, `S` skip,
+- **Keyboard first** - `Space` to start or pause, `R` reset, `S` skip,
   `N` new task, `T` theme.
-- **Accessible** — semantic landmarks, visible focus rings, a skip link,
+- **Accessible** - semantic landmarks, visible focus rings, a skip link,
   `aria-live` announcements, and reduced-motion support.
-- **Zero dependencies** — no `node_modules` needed to run or test the app.
+- **Zero dependencies** - no `node_modules` needed to run or test the app.
 
 ## Keyboard shortcuts
 
@@ -91,7 +91,7 @@ modules, so they can be tested without a browser:
 npm test
 ```
 
-The suite uses the built-in `node:test` runner — 34 tests, no dependencies.
+The suite uses the built-in `node:test` runner - 34 tests, no dependencies.
 CI runs the same command on Node 22 and 24 for every push and pull request.
 
 ## Project structure
@@ -130,7 +130,7 @@ timer.complete();       // records the session, returns the next mode
 
 Pushes to `main` are built and published to GitHub Pages by
 [`pages.yml`](.github/workflows/pages.yml). The workflow copies `index.html`
-and `assets/` into an artifact — no build step, no secrets.
+and `assets/` into an artifact - no build step, no secrets.
 
 ## Data and privacy
 

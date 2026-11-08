@@ -7,7 +7,7 @@ import { MODE_CAPTIONS, MODE_LABELS, MODES, PomodoroTimer } from './timer.js';
 import { addTask, clearCompleted, removeTask, sanitizeTasks, taskStats, toggleTask } from './tasks.js';
 import { createStore } from './storage.js';
 
-const BASE_TITLE = 'FocusFlow — Pomodoro timer & task list';
+const BASE_TITLE = 'FocusFlow - Pomodoro timer & task list';
 const RING_CIRCUMFERENCE = 2 * Math.PI * 120; // r="120" in the SVG ring
 const TICK_MS = 250;
 const DOTS_PER_CYCLE = 4;
